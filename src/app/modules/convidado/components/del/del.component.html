@@ -1,0 +1,35 @@
+<section  class="convidado-form">
+
+  <form>
+      <p class= "msnText">Tem certeza que deseja excluir o convidado Id = {{selectId}} ! </p>
+
+      <div class="content">
+        <img class="imgSize" src="../../../../../assets/img/svg/delete.svg" alt="">
+      </div>
+
+     <footer class="footer-action">
+      <a
+      routerLink='/home/convidado/list'
+      routerLinkActive >
+        <mat-icon
+          class="item-action btnBack"
+          mat-raised-button
+          matTooltip="Cancelar"
+        > cancel
+        </mat-icon>
+      </a>
+
+      <a
+      (click)="deleteConvidado()" >
+      <mat-icon
+        class="item-action btnPost"
+        mat-raised-button
+        matTooltip="Excluir"
+        >check_circle
+      </mat-icon></a>
+    </footer>
+
+  </form>
+</section>
+
+

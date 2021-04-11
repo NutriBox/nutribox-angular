@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.successPanel{
+  background-color:#5cb85c;
+  color:white;
+
+}
+
+.dangerPanel{
+  background-color:#d9534f;
+  color:white;
+}
+
+.warningPanel{
+  background-color:#f0ad4e;
+  color:white;
+}
+
+.mat-simple-snackbar-action {
+  color: #ffffff !important;
+}
+
+.btnPost{
+  color: #5cb85c;
+}
+.btnBack{
+  color: #f0ad4e;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

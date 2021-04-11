@@ -1,0 +1,93 @@
+.headerlogo{
+    display: flex;
+    justify-content: center;
+}
+.headerToolbar{
+  background-color: #4682B4;
+  color: white;
+}
+
+.sidenav {
+  background-color: #4682B4;
+  color: white;
+  width: 200px;
+}
+
+.mat-nav-list > a{
+  color: white;
+}
+
+.sidenav .mat-toolbar {
+  color: white;
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.sidenav-container {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  padding: 2%;
+  width: 100%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.spacer-icon{
+  padding-right: 5px;
+}
+
+.icoUserLogin{
+  color:#5cb85c;
+}
+
+.icoUserLogout{
+  color:#d9534f;
+}
+
+.linkRouter:focus{
+  outline-style: none;
+}
+
+.spacer-icon-header{
+  margin-left: 15px;
+}
+
+/* Accordion */
+.header-accordion{
+  background-color: #4682B4 ;
+  color: white;
+  margin-left: -15px;
+}
+
+.spacer-icon-accordion{
+  margin-top: -3px;
+  margin-right: 5px;
+}
+
+.item-accordion{
+
+   text-decoration: none;
+   color:white;
+}
+
+.item-accordion:focus{
+
+  text-decoration: none;
+  color :  #c8a2c8;
+}
+
+.logoImg{
+  width: 35px;
+  padding-right: 10px;
+}
+

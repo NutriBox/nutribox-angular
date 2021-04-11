@@ -1,0 +1,125 @@
+<img class="wave" src="../../../../assets/img/png/wave.png">
+
+<div class="img">
+  <img src="../../../../assets/img/svg/login.svg">
+</div>
+
+<div class="my-login-page">
+  <section class="h-100">
+    <div class="container h-100">
+      <div class="row justify-content-md-center h-100">
+        <div class="card-wrapper">
+          <div class="brand">
+          </div>
+          <div class="card fat">
+
+            <img id="profile-img" src="../../../../assets/img/logo/logo_nutribox_not_text.png" class="profile-img-card"
+              alt="logo" />
+
+            <div class="card-body">
+              <!-- <h4 class="card-title">Utilizar suas credenciais</h4> -->
+              <div class="alert alert-danger" role="alert" data-dismiss="alert" aria-label="Close" *ngIf="errorMessage">
+                <span> {{errorMessage}} </span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeCardErro()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="square-jelly-box">
+                <p style="font-size: 20px; color: white">
+                  Loading...
+                </p>
+              </ngx-spinner>
+
+              <form [formGroup]="formLogin" class="my-login-validation">
+
+                <div class="form-group">
+                  <label for="username">Usuário</label>
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <span class="material-icons">
+                          account_circle
+                        </span>
+                      </div>
+                    </div>
+                    <input type="text" class="form-control" id="username" placeholder="" formControlName="username">
+                  </div>
+
+
+                  <div *ngIf="!validUsername.pristine && validUsername.errors" class="text-danger">
+                    <p *ngIf="validUsername.errors.required">
+                      Nome é obrigatório.
+                    </p>
+                    <p *ngIf="validUsername.errors.minlength">
+                      Nome deve ter no mínimo 3 caracters.
+                    </p>
+                    <!-- <p *ngIf="validUsername.errors.maxlength">
+                          Nome deve ter no máximo 40 caracters.
+                        </p> -->
+                  </div>
+
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Senha</label>
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <span class="material-icons">
+                          lock
+                        </span>
+                      </div>
+                    </div>
+                    <input type="password" class="form-control" id="password" placeholder="" #inputPass maxlength="40"
+                      formControlName="password">
+                  </div>
+
+
+                  <div *ngIf="!validPassword.pristine && validPassword.errors" class="text-danger">
+                    <p *ngIf="validPassword.errors.required" >
+                      Senha é obrigatória.
+                    </p>
+                    <p *ngIf="validPassword.errors.minlength" >
+                      Senha deve ter no mínimo 6 caracters.
+                    </p>
+                    <p *ngIf="validPassword.errors.maxlength" >
+                      Senha deve ter no máximo 40 caracters.
+                    </p>
+                  </div>
+
+                </div>
+
+                <div class="form-group">
+                  <a href="forgot.html" class="float-right">
+                    Esqueceu a senha?
+                  </a>
+                  <mat-hint> Total de caracteres {{ inputPass.value?.length || 0}}/40</mat-hint>
+                </div>
+
+                <div class="form-group">
+                  <div class="custom-checkbox custom-control">
+                    <input type="checkbox" name="remember" id="remember" class="custom-control-input">
+                    <label for="remember" class="custom-control-label">Lembre de mim</label>
+                  </div>
+                </div>
+
+                <div class="form-group m-0">
+                  <button [disabled]="!formLogin.valid" (click)="onSubmit()" class="btn btn-info btn-block">
+                    Acessar
+                  </button>
+                </div>
+                <div class="mt-4 text-center">
+                  Não tem conta? <a routerLink='/register'> Crie um </a>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="footer">
+            Copyright &copy; 2021 &mdash; NutriBox
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
