@@ -32,3 +32,8 @@
   height: 300px;
   width: 300px;
 }
+
+.btn-end{
+  display: flex;
+  justify-content: flex-end;
+}

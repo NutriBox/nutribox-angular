@@ -11,10 +11,20 @@ Loading...
 
 
 <div class="card border-danger mb-3 center-form" style="max-width: 32rem;" >
-  <div class="card-header bg-danger border-danger text-white">Excluir Epecialidade</div>
+  <div class="card-header bg-danger border-danger text-white">Excluir Especialidade</div>
   <div class="card-body text-info">
-    <div class="alert alert-warning" role="alert">
-      Tem certeza que deseja excluir a epecialidade <strong>{{nameExclud}}</strong>  !
+    <div class="alert alert-warning" role="alert" *ngIf="!erroMsg">
+      Tem certeza que deseja excluir a especialidade <strong>{{nameExclud}}</strong>  !
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="erroMsg" >
+      <strong>Erro {{errorMessage}} </strong> {{erroMsg}} !
+     <span class="btn-end">
+       <button routerLink='/home/especialidade/list' class="btn btn-danger btn-sm mr-2 btnSize " >
+         <i class="fa fa-undo" aria-hidden="true"></i>
+           voltar
+       </button>
+    </span>
+
     </div>
     <div class="content">
       <img class="imgSize" src="../../../../../assets/img/svg/delete.svg" alt="">
