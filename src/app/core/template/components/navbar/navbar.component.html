@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navColor">
+  <div class="container-fluid">
+
+      <button type="button" id="sidebarCollapse" class="navbar-btn d-lg {{sideBarToggle}}" (click)="ativaBtn()" >
+          <span></span>
+          <span></span>
+          <span></span>
+      </button>
+      <button class="btn btn-light d-inline-block d-lg-none ml-auto navbar-btn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-align-justify"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav nav-pills navbar-nav ml-auto">
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-bell"></i> <span class="badge badge-danger">9</span></a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-lock"></i></a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Notivicação</a>
+                      <a class="dropdown-item" href="#">Login</a>
+                      <a class="dropdown-item" href="#">Cadastro</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-share-alt"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-door-closed"></i></a>
+                  </li>
+
+          </ul>
+      </div>
+  </div>
+</nav>
+
+<app-nav-breadcrumb [title] = "newTitle" ></app-nav-breadcrumb>
+
+ <!-- <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+   <li class="breadcrumb-item"><a routerLink="{{routUrl}}" >{{title}}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">página ativa</li>
+  </ol>
+</nav>-->
+<div id="dataContent">
+  <router-outlet></router-outlet>
+</div>

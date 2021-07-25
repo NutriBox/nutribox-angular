@@ -1,0 +1,102 @@
+/* Structure */
+.example-container {
+  position: relative;
+  min-height: 200px;
+}
+
+.example-table-container {
+  position: relative;
+  max-height: 400px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.example-loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-rate-limit-reached {
+  color: #980000;
+  max-width: 360px;
+  text-align: center;
+}
+
+/* Column Widths */
+.mat-column-number,
+.mat-column-state {
+  max-width: 64px;
+}
+
+.mat-column-created {
+  max-width: 124px;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.mat-form-field {
+  padding-top: 5px;
+  padding-left: 20px;
+  font-size: 14px;
+  width: 50%;
+}
+
+.semStado{
+  display: flex;
+  margin: auto;
+  padding: 50px;
+}
+
+.item{
+  margin: auto;
+  width: 400px;
+}
+
+.load{
+  display: flex;
+  padding: 50px;
+}
+
+.itemLoad{
+  margin: auto;
+  width: 300px;
+}
+
+.button-container-add{
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.infoDone{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-size: 15px;
+  color: brown;
+}
+
+.btnNew{
+  background-color: #5bc0de
+}
+
+.btnEdit{
+  color:#f0ad4e;
+}
+
+.btnDel{
+  color:#d9534f;
+}

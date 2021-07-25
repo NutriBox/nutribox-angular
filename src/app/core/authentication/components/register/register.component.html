@@ -1,0 +1,136 @@
+<img class="wave" src="../../../../assets/img/png/wave.png">
+
+<div class="img">
+  <img src="../../../../assets/img/svg/login.svg">
+</div>
+
+<div class="col-md-12">
+  <div class="card card-container">
+    <img
+      id="profile-img"
+      src="../../../../assets/img/logo/logo_nutribox_not_text.png"
+      class="profile-img-card"
+    />
+
+    <ngx-spinner
+      bdColor="rgba(51,51,51,0.8)"
+      size="medium"
+      color="#fff"
+      type="square-jelly-box"
+      >
+      <p style="font-size: 20px; color: white">
+        Loading...
+      </p>
+    </ngx-spinner>
+
+    <form  [formGroup] = "fromRegister" >
+      <div class="form-group">
+        <label for="username">Usuário</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <span class="material-icons">
+                  account_circle
+                </span>
+              </div>
+            </div>
+            <input type="text" class="form-control" id="username" formControlName="username" />
+          </div>
+
+          <div *ngIf="!username.pristine && username.errors" class="text-danger">
+            <p *ngIf="username.errors.required">
+              Nome é obrigatório.
+            </p>
+            <p *ngIf="username.errors.minlength">
+              Nome deve ter no mínimo 3 caracters.
+            </p>
+            <p *ngIf="username.errors.maxlength">
+              Nome deve ter no máximo 20 caracters.
+            </p>
+          </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-Mail</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <span class="material-icons">
+                  alternate_email
+                </span>
+              </div>
+            </div>
+          <input type="email" class="form-control" id="email" formControlName="email" />
+          </div>
+
+            <div *ngIf="!email.pristine && email.errors" class="text-danger">
+              <p *ngIf="email.errors.required">
+                Nome é obrigatório.
+              </p>
+              <p *ngIf="email.errors.email">
+                Digite um e-mail válido.
+              </p>
+          </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="password">Senha</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <span class="material-icons">
+                  lock
+                </span>
+              </div>
+            </div>
+          <input type="password" class="form-control" id="password" formControlName="password" #inputPass maxlength="40"/>
+          </div>
+          <mat-hint> Total de caracteres {{ inputPass.value?.length || 0}}/40</mat-hint>
+
+          <div *ngIf="!password.pristine && password.errors" class="text-danger">
+            <p *ngIf="password.errors.required">
+              Senha é obrigatória.
+            </p>
+            <p *ngIf="password.errors.minlength">
+              Senha deve ter no mínimo 6 caracters.
+            </p>
+            <p *ngIf="password.errors.maxlength">
+              Senha deve ter no máximo 40 caracters.
+            </p>
+          </div>
+
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-info btn-block" [disabled]="!fromRegister.valid" (click)="onSubmit()" >Registrar</button>
+      </div>
+
+     <div class="alert alert-warning" *ngIf="fromRegister.valid && isSignUpFailed">
+        Falha na inscrição!<br />{{ errorMessage }}
+      </div>
+
+
+
+
+    </form>
+
+    <div class="alert alert-success" *ngIf="isSuccessful">
+      Seu cadastro foi realizado com sucesso!
+    </div>
+
+    <div class="mt-4 text-center">
+      <a routerLink='/login'>  Fazer login <span class="material-icons">lock</span> </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- <pre>
+<div>{{ fromRegister.value | json}}</div>
+</pre>
+
+<pre>
+<div>{{ fromRegister.valid | json }}</div>
+</pre> -->

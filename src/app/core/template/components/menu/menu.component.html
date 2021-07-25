@@ -1,0 +1,16 @@
+<span *ngFor="let menu of itemMenu;  let i = index">
+  <li class=" *ngIf='i == 1' active else '' ">
+    <a href="#{{menu.descGroup}}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="spacer-icon {{menu.icone}}"></i>{{menu.descGroup}}</a>
+    <ul class="collapse list-unstyled" id="{{menu.descGroup}}">
+      <li *ngFor="let subMenu of itemSub let j = index">
+        <span *ngIf="subMenu['menu'].idMenu == menu.idMenu">
+          <a routerLinkActive="active" routerLink="{{subMenu.link}}"><i class="spacer-icon {{subMenu.icone}}"></i>{{subMenu.descSubMenu}}</a>
+        </span>
+      </li>
+    </ul>
+  </li>
+</span>
+
+<!-- <pre>
+  {{itemMenu | json}}
+</pre> -->
