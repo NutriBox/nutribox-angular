@@ -42,7 +42,7 @@ export class EditComponent implements OnInit {
 
   }
 
-  salvaEspecialidade() {
+  salvaEspecialidade(): void{
     this.spinner.show();
     this.especialidadeService.update(this.selectId, this.frmEspecialidade.value).subscribe(res => {
       this.sn.showMensage('A especialidade ' + this.frmEspecialidade.get('nomeEspecialidade').value + ' alterada com sucesso!', 'successPanel');

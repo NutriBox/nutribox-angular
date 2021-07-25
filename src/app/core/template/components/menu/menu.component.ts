@@ -6,7 +6,7 @@ import { Menu } from '../../model/menu';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
 
@@ -19,13 +19,11 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
 
     this.menuService.getMenuAll().subscribe(data => {
-      this.itemMenu = data.filter(a => {if (a.active){ return a;} });
-      console.log(data);
+      this.itemMenu = data.filter(a => { if (a.active) { return a; } });
     });
 
     this.menuService.getSubAll().subscribe(data => {
-      this.itemSub = data.filter(a => {if (a.active){ return a;} });
-      console.log(data);
+      this.itemSub = data.filter(a => { if (a.active) { return a; } });
     });
 
 

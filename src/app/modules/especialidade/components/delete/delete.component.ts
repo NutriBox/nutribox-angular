@@ -37,7 +37,7 @@ export class DeleteComponent implements OnInit {
     });
   }
 
-  deleteEspecialidade() {
+  deleteEspecialidade(): void {
     this.spinner.show();
     this.especialidadeService.delete(this.selectId).subscribe(dados => {
       this.sn.showMensage('O especialidade foi exluída com sucesso!', 'successPanel');

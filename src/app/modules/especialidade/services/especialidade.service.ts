@@ -1,8 +1,8 @@
 import { map } from 'rxjs/operators';
-import { Especialidade } from './../model/especialidade';
+import { Especialidade, Especialidades } from './../model/especialidade';
 import { environment } from './../../../../environments/environment';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -38,17 +38,21 @@ export class EspecialidadeService {
     return this.http.put<Especialidade>(this.apiServer + 'especialidades/' + id, JSON.stringify(especialidade), this.httpOptions);
   }
 
-  delete(id) {
+  delete(id): Observable<any> {
     return this.http.delete<Especialidade>(this.apiServer + 'especialidades/' + id, this.httpOptions);
   }
 
-  getAllPage(): Observable<Especialidade[]> {
-    return this.http.get<Especialidade[]>(`${this.apiServer}especialidades/page?page=${this.page}&linesPerPage=${this.linesPerPage}&orderBy=${this.orderBy}&direction=${this.direction}`)
-    .pipe(
-      map(res =>  res['content'])
-    );
-  }
+
+  getAllPage(pageNumber: number, pageSize: number, sortOrdem: string): Observable<Especialidades[]> {
+  let params = new HttpParams();
+
+  params = params.append('page', String(pageNumber));
+  params = params.append('size', String(pageSize));
+  params = params.append('sort', String(sortOrdem));
+  return this.http.get<Especialidades[]>(this.apiServer + 'especialidades/page', {params});
+}
 
   constructor(private http: HttpClient) { }
 
 }
+

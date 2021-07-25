@@ -31,14 +31,14 @@ export class CreateComponent implements OnInit {
     });
   }
 
-  closeCardErro() {
+  closeCardErro(): void {
     if (this.errorMessage !== '') {
       this.errorMessage = '';
       this.erroMsg = '';
     }
   }
 
-  salvaEspecialidade() {
+  salvaEspecialidade(): void {
     this.spinner.show();
     this.especialidadeService.create(this.frmEspecialidade.value).subscribe(res => {
       this.sn.showMensage('A especialidade ' + this.frmEspecialidade.get('nomeEspecialidade').value + ' cadastrado com sucesso!', 'successPanel');

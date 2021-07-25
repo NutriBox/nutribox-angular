@@ -10,12 +10,12 @@ export class SnackBarAlertService {
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
-constructor(private snackBar : MatSnackBar) { }
+constructor(private snackBar: MatSnackBar) { }
 
-showMensage(msn:string, colorPanel?: string){
+showMensage(msn: string, colorPanel?: string): void{
   this.snackBar.open(
     msn,
-    "x", {
+    'X', {
       duration: 2500,
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,

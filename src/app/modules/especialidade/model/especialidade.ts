@@ -24,13 +24,19 @@ export interface Sort2 {
   empty: boolean;
 }
 
-export interface RootObject {
-  content: Especialidade[];
+export interface SortOrdem {
+  active: string;
+  direction: string;
+}
+
+export interface Especialidades {
+  especialidade: Especialidade[];
   pageable: Pageable;
   last: boolean;
   totalPages: number;
   totalElements: number;
   sort: Sort2;
+  sortOrdem: SortOrdem;
   numberOfElements: number;
   first: boolean;
   size: number;

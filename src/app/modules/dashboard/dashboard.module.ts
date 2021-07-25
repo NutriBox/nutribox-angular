@@ -10,4 +10,8 @@ import { DashboardComponent } from './dashboard.component';
   ],
   declarations: [DashboardComponent]
 })
-export class DashboardModule { }
+
+export class DashboardModule {
+
+  constructor(){}
+ }

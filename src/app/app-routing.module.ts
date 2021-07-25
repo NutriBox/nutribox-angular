@@ -24,15 +24,21 @@ const routes: Routes = [
       },
 
       {
-        path: 'convidado',
-        loadChildren: () => import('./modules/convidado/convidado.module').
-          then(m => m.ConvidadoModule)
+        path: 'pessoa',
+        loadChildren: () => import('./modules/pessoa/pessoa.module').
+          then(m => m.PessoaModule)
       },
 
       {
         path: 'especialidade',
         loadChildren: () => import('./modules/especialidade/especialidade.module').
           then(m => m.EspecialidadeModule)
+      },
+
+      {
+        path: 'agenda',
+        loadChildren: () => import('./modules/agenda/agenda.module').
+          then(m => m.AgendaModule)
       },
 
       {

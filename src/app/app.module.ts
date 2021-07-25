@@ -1,11 +1,12 @@
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { SidebarModule } from 'ng-sidebar';
 
 import { RouterModule } from '@angular/router';
 import { TemplateModule } from './core/template/template.module';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/material-module';
-import { ConvidadoModule } from './modules/convidado/convidado.module';
+import { PessoaModule } from './modules/pessoa/pessoa.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
@@ -22,18 +23,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthenticationModule } from './core/authentication/authentication.module';
-
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent,
-  ],
+    AppComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AuthenticationModule,
-    ConvidadoModule,
+    PessoaModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
@@ -48,8 +48,9 @@ import { AuthenticationModule } from './core/authentication/authentication.modul
     RouterModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
-    DashboardModule
-
+    DashboardModule,
+    NgbModule,
+    SidebarModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],

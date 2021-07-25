@@ -1,3 +1,4 @@
+import { SharedModule } from 'src/app/shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/shared/material-module';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -17,7 +18,8 @@ import { EditComponent } from './components/edit/edit.component';
     NgxSpinnerModule,
     ReactiveFormsModule,
     EspecialidadeRoutingModule,
-    MaterialModule
+    MaterialModule,
+    SharedModule
   ]
 })
 export class EspecialidadeModule { }

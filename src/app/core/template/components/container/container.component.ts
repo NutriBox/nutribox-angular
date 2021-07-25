@@ -1,5 +1,5 @@
+import { NavbarService } from './../../services/navbar.service';
 import { TokenStorageService } from 'src/app/core/authentication/services/token-storage.service';
-import { HeaderToolbarService } from './../../../../shared/service/headerToolbar.service';
 import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
@@ -19,23 +19,16 @@ export class ContainerComponent implements OnInit {
     shareReplay()
   );
 
+  isActiveSide = '';
+
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private headerToolBarService: HeaderToolbarService,
+    private navbarService: NavbarService,
     private tokenStorage: TokenStorageService
     ) { }
 
   ngOnInit(): void {
-  }
-
-  get title(){
-    return this.headerToolBarService.headerToolBarData.title
-  }
-  get icon(){
-    return this.headerToolBarService.headerToolBarData.icon
-  }
-  get routUrl(){
-    return this.headerToolBarService.headerToolBarData.routUrl
+      this.navbarService.getStateSideBar().subscribe(changeToggle => {return this.isActiveSide = changeToggle});
   }
 
   reloadPage(): void {

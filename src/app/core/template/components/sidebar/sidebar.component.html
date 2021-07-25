@@ -1,0 +1,26 @@
+<nav id="sidebar" class="{{sideBarToggle}}">
+  <div class="sidebar-header">
+      <div class="logo">
+           <img src="../../../../../assets/img/logo/logo_nutribox_not_text.png" alt="logo">
+           <span class="title">Nutribox</span> <sub><span class="vs"> vs. {{version}}</span></sub>
+      </div>
+  </div>
+
+  <ul class="list-unstyled components">
+      <div class="nameUser">
+        <p class="item">Usuário: {{currentUser.username | uppercase}}</p>
+        <p class="item" #matricula >Matrícula: {{currentUser.id}}</p>
+      </div>
+   <app-menu></app-menu>
+  </ul>
+
+  <ul class="list-unstyled CTAs">
+      <li>
+          <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+      </li>
+      <li>
+          <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+      </li>
+  </ul>
+</nav>
+

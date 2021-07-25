@@ -1,0 +1,55 @@
+<div class="card border-warning mb-3 center-form" style="max-width: 32rem;" >
+  <div class="card-header bg-warning border-warning text-white">Editar Pessoa</div>
+  <div class="card-body text-info">
+
+    <form [formGroup]="frmPessoa">
+      <div class="form-group">
+        <label for="id">Pessoa</label>
+        <input type="text" class="form-control" id="id" aria-describedby="idHelp" placeholder="Identificador" formControlName="idPessoa">
+        <small id="idHelp" class="text-danger"> {{errorMessage}} </small>
+
+        <label for="nomePessoa">Nome Pessoa</label>
+        <input type="text" class="form-control" id="nomePessoa" aria-describedby="nomeHelp" placeholder="Nome da pessoa" formControlName="nome">
+        <small id="nomeHelp" class="text-danger"> {{errorMessage}} </small>
+
+        <label for="cpfPessoa">CPF Pessoa</label>
+        <input type="text" class="form-control" id="cpfPessoa" aria-describedby="cpfHelp" placeholder="CPF da pessoa" formControlName="cpf" mask="CPF_CNPJ">
+        <small id="cpfeHelp" class="text-danger"> {{errorMessage}} </small>
+
+        <label for="nascimentoPessoa">Data Nascimento</label>
+        <input type="date" class="form-control" id="nascimentoPessoa" aria-describedby="DataNascimentoHelp" placeholder="Data Nascimento" formControlName="dataNascimento">
+        <small id="DataNascimentoHelp" class="text-danger"> {{errorMessage}} </small>
+
+        <label for="TipoPessoa">Tipo de Pessoa</label>
+        <select class="form-select" id="TipoPessoa" class="form-control" aria-label="Default select example" aria-describedby="TipoPessoaHelp" formControlName="idTipoPessoa">
+          <option value="1">Física</option>
+          <option value="2">Jurídica</option>
+        </select>
+        <small id="TipoPessoaHelp" class="text-danger"> {{errorMessage}} </small>
+      </div>
+    </form>
+
+  </div>
+  <div class="card-footer bg-transparent border-warning footer-action">
+        <button type="button" class="btn btn-danger btn-sm mr-2 btnSize" data-toggle="tooltip" data-placement="bottom" title="Descartar" routerLink='/home/pessoa/list'>
+          <i class="fa fa-undo" aria-hidden="true"></i>
+          Descartar
+        </button>
+        <button type="button" [disabled]="!frmPessoa.valid" class="btn btn-info btn-sm mr-2 btnSize" data-toggle="tooltip" data-placement="bottom" title="Salvar"
+                (click)="salvaPessoa()">
+          <i class="fa fa-check" aria-hidden="true"></i>
+          Salvar
+        </button>
+  </div>
+</div>
+
+<ngx-spinner
+bdColor="rgba(51,51,51,0.8)"
+size="medium"
+color="#fff"
+type="square-jelly-box"
+>
+<p style="font-size: 20px; color: white">
+  Loading...
+</p>
+</ngx-spinner>
