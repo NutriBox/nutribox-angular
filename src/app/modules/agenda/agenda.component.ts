@@ -210,7 +210,7 @@ export class AgendaComponent implements OnInit {
   }
 
   createDateSelect(selectInfo: DateSelectArg): void {
-    alert( this.tokenStorageService.getUser().id );
+   // alert( this.tokenStorageService.getUser().id );
     this.frmAgenda.reset();
     this.isEdit = false;
     this.frmAgenda.patchValue({
