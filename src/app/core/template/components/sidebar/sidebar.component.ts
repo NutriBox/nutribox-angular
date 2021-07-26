@@ -1,7 +1,6 @@
 import { NavbarService } from './../../services/navbar.service';
 import { TokenStorageService } from 'src/app/core/authentication/services/token-storage.service';
 import { Component, OnInit } from '@angular/core';
-import { version } from '../../../../../../../nutribox-angular/package.json';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,14 +10,14 @@ import { version } from '../../../../../../../nutribox-angular/package.json';
 export class SidebarComponent implements OnInit {
   sideBarToggle = '';
   currentUser: any;
-  version = version;
+  version = '1.0.0.1';
   constructor(
     private token: TokenStorageService,
     private navbarService: NavbarService
   ) { }
 
   ngOnInit(): void {
-    this.navbarService.getStateSideBar().subscribe(changeToggle => { return this.sideBarToggle = changeToggle });
+    this.navbarService.getStateSideBar().subscribe(changeToggle =>  this.sideBarToggle = changeToggle );
     this.currentUser = this.token.getUser();
   }
 
