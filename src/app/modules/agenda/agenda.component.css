@@ -13,7 +13,8 @@ li {
   padding: 0;
 }
 
-b { /* used for event dates/times */
+b {
+  /* used for event dates/times */
   margin-right: 3px;
 }
 
@@ -40,15 +41,39 @@ b { /* used for event dates/times */
   padding: 0em;
 }
 
-.fc { /* the calendar root */
+.fc {
+  /* the calendar root */
   max-width: 1100px;
   margin: 0 auto;
 }
 
-.Rocho { background-color: '#9823c9'};
-.Azul { background-color: '#25c4fe'};
-.Amarelo { background-color: '#ffc24f'};
-.Verde { background-color: '#98d843'};
-.Rosa { background-color: '#fe10a6'};
-.Vermelho { background-color:'#fe3c3a'};
+@media (max-width: 767.98px) {
+  .fc{
+     font-size: 10px;
+      margin: 0 auto;
+      display: block;
+  }
 
+  h2 .fc-toolbar-title {
+    display: none;
+  }
+}
+
+.Rocho {
+  background-color: "#9823c9";
+}
+.Azul {
+  background-color: "#25c4fe";
+}
+.Amarelo {
+  background-color: "#ffc24f";
+}
+.Verde {
+  background-color: "#98d843";
+}
+.Rosa {
+  background-color: "#fe10a6";
+}
+.Vermelho {
+  background-color: "#fe3c3a";
+}
